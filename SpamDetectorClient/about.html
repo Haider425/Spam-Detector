@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spam Detector - About</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Spam Detector Dashboard</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="switch">
+          <input type="checkbox" class="switch__input" id="Switch" />
+          <label class="switch__label" for="Switch">
+            <span class="switch__indicator"></span>
+            <span class="switch__decoration"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="center">
+          <div class="textBox">
+            <div class="bigText">
+              <h2>Our team</h2>
+            </div>
+
+            <div class="text">
+              <p>The following are the members of our team:</p>
+            </div>
+
+            <div class="list">
+              <ul>
+                <li>Kershan Arulneswaran</li>
+                <li>Simon Berhe</li>
+                <li>Haider Saleem</li>
+                <li>Smit Kalathia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>copyright &copy; CSCI2020 - 2024</p>
+      </div>
+    </div>
+
+    <script>
+      const toggleThemeBtn = document.getElementById("Switch");
+      const body = document.body;
+  
+      // Check if the switch state is stored in localStorage
+      const storedSwitchState = localStorage.getItem("switchState");
+      if (storedSwitchState === "light-mode") {
+        body.classList.add("light-mode");
+        toggleThemeBtn.checked = true;
+      }
+  
+      toggleThemeBtn.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+        
+        // Update and store the switch state in localStorage
+        if (toggleThemeBtn.checked) {
+          localStorage.setItem("switchState", "light-mode");
+        } else {
+          localStorage.removeItem("switchState");
+        }
+      });
+    </script>
+  </body>
+</html>

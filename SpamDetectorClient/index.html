@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <!-- Add your site or application content here -->
+
+    <div class="container">
+      <div class="header">
+        <h1>Spam Detector Dashboard</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="switch">
+          <input type="checkbox" class="switch__input" id="Switch" />
+          <label class="switch__label" for="Switch">
+            <span class="switch__indicator"></span>
+            <span class="switch__decoration"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="middle">
+          <div class="middle-content">
+            <div class="title">
+              <div class="titleBox">
+                <h2>Dashboard</h2>
+              </div>
+            </div>
+            <div class="table" id="chart">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>File</th>
+                    <th>Spam Probability(%) </th>
+                  </tr>
+                </thead>
+                <tbody>
+
+         
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="box">
+            <div class="title">
+              <h2>Performace of the model</h2>
+            </div>
+            <div class="accuracy">
+              <label for="accuracy">Accuracy</label>
+              <input type="number" id="accuracy" name="accuracy"  />
+            </div>
+            <div class="precision">
+              <label for="precision">Precision</label>
+              <input type="number" id="precision" name="precision" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>copyright &copy; CSCI2020 - 2024</p>
+      </div>
+    </div>
+
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+      window.ga = function () {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga("create", "UA-XXXXX-Y", "auto");
+      ga("set", "anonymizeIp", true);
+      ga("set", "transport", "beacon");
+      ga("send", "pageview");
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+    <script>
+      const toggleThemeBtn = document.getElementById("Switch");
+      const body = document.body;
+
+      // Check if the switch state is stored in localStorage
+      const storedSwitchState = localStorage.getItem("switchState");
+      if (storedSwitchState === "light-mode") {
+        body.classList.add("light-mode");
+        toggleThemeBtn.checked = true;
+      }
+
+      toggleThemeBtn.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+
+        // Update and store the switch state in localStorage
+        if (toggleThemeBtn.checked) {
+          localStorage.setItem("switchState", "light-mode");
+        } else {
+          localStorage.removeItem("switchState");
+        }
+      });
+    </script>
+
+  </body>
+</html>
