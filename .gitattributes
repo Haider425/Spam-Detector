@@ -1,1 +1,3 @@
-* linguist-language=CSS
+*.roff linguist-language=ignore
+*.man linguist-language=ignore
+*.mdoc linguist-language=ignore
