@@ -1,3 +1,11 @@
+# Ignore specific file types
 *.roff linguist-language=ignore
 *.man linguist-language=ignore
 *.mdoc linguist-language=ignore
+*.ttf linguist-language=ignore
+*.md linguist-language=ignore
+*.xml linguist-language=ignore
+*.cmd linguist-language=ignore
+
+# Ignore everything in the spamDetectorServer/src/main/resources folder
+spamDetectorServer/src/main/resources/* linguist-language=ignore
