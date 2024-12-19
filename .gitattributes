@@ -1,4 +1,1 @@
-*.md linguist-documentation
-*.roff linguist-detectable=false
-# or
-*.roff linguist-documentation=true
+* linguist-language=<Css>
